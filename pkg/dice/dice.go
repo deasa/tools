@@ -7,6 +7,9 @@ type Die struct {
 }
 
 func NewDie(sides int) *Die {
+	if sides < 1 {
+		panic("die must have at least one side")
+	}
 	return &Die{sides: float64(sides)}
 }
 
